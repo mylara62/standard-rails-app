@@ -10,13 +10,21 @@ machine:
   environment:
     SMTP_USER: mylarayuvasoft146@gmail.com
 
-  heroku:
+  deployment:
+  production:
     branch: master
     commands:
       - git push git@heroku.com:standard-rails-app.git $CIRCLE_SHA1:master
-      - heroku maintenance:on --app standard-rails-app
-      - heroku run rake db:migrate --app standard-rails-app
-      - heroku restart --app standard-rails-app
+      - heroku run rake db:migrate --app standard-rails-app.git
+
+
+  # heroku:
+  #   branch: master
+  #   commands:
+  #     - git push git@heroku.com:standard-rails-app.git $CIRCLE_SHA1:master
+  #     - heroku maintenance:on --app standard-rails-app
+  #     - heroku run rake db:migrate --app standard-rails-app
+  #     - heroku restart --app standard-rails-app
 
   # deployment:
 #   production:

@@ -1,7 +1,5 @@
 # Standard Rails Application
 
-## Gemfile
-
 # Application Gem
 
 * [Autoprefixer](https://github.com/ai/autoprefixer-rails) Rails for CSS vendor prefixes
