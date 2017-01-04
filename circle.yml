@@ -1,0 +1,30 @@
+machine:
+  # disabled timezone, cause it needs to resart PG and Mysql on the server
+  # timezone:
+  #   Europe/Amsterdam
+  services:
+    # - docker
+  hosts:
+    # example.com: 127.0.0.1
+
+  environment:
+    SMTP_USER: example@gmail.com
+
+deployment:
+  production:
+    # branch: master
+    # commands:
+    #   - bin/deploy production
+
+  staging:
+    # branch: staging
+    # commands: 
+    #   - bin/deploy staging
+
+  heroku:
+    branch: master
+    commands:
+      - git push git@heroku.com:standard-rails-app.git $CIRCLE_SHA1:master
+      - heroku maintenance:on --app standard-rails-app
+      - heroku run rake db:migrate --app standard-rails-app
+      - heroku restart --app standard-rails-app
