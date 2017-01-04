@@ -2,4 +2,8 @@ deployment:
   staging:
     branch: master
     heroku:
-      appname: standard-rails-app
+      commands:
+        - git push git@heroku.com:standard-rails-app $CIRCLE_SHA1:master
+        - heroku maintenance:on --app standard-rails-app
+        - heroku run rake db:migrate --app standard-rails-app
+        - heroku restart --app standard-rails-app
