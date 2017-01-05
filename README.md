@@ -13,6 +13,7 @@
 * [Title](https://github.com/calebthompson/title) for storing titles in translations
 * [Puma](https://github.com/thoughtbot/suspenders/blob/master/README.md) to serve HTTP requests
 * [Redis](https://github.com/redis/redis-rb)
+* [Slim](https://github.com/slim-template/slim-rails) for using lightweight forms
 
 # Developement Gem
 
@@ -46,8 +47,12 @@
 * [capybara](https://rubygems.org/gems/capybara/versions/2.7.1)
 * [formulaic](https://github.com/thoughtbot/formulaic)
 
-# Scheduler Gem
+# Background Process Gem
 
+* [rufus-scheduler](https://github.com/jmettraux/rufus-scheduler)
+* [whenever](https://github.com/javan/whenever)
+* [crono](https://github.com/plashchynski/crono)
+* [sidekiq](https://github.com/mperham/sidekiq)
 
 ### Associated services
 
@@ -55,9 +60,9 @@
 * Enable [GitHub auto deploys to Heroku staging and review
     apps](https://dashboard.heroku.com/apps/app-name-staging/deploy/github).
 
-
-It includes application gems like:
-
 # Start Application
 
+* clone project
+* bundle install
 * bin/delayed_job start
+* start server (rails s)
